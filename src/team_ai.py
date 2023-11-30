@@ -1,4 +1,5 @@
 from __future__ import annotations
+from apiwrapper.models import Command, ActionType, MoveActionData, GameState, ClientContext, deserialize_game_state, serialize_command
 
 from logging import getLogger
 from typing import TYPE_CHECKING
@@ -26,23 +27,20 @@ Examples:
 
 
 def process_tick(context: ClientContext, game_state: GameState) -> Command | None:
-    """Main function defining the behaviour of the AI of the team
 
-    Arguments:
-        context (ClientContext): persistent context that can store data and state between ticks. Wiped on game creation
-        game_state (GameState): the current state of the game
-
-    Returns:
-        Command: `apiwrapper.models.Command` instance containing the type and data of the command to be executed on the
-        tick. Returning None tells server to move 0 steps forward.
-
-    Note:
-        You can get tick time in milliseconds from `context.tick_length_ms` and ship turn rate in 1/8th circles from
-        `context.turn_rate`.
-
-        If your function takes longer than the max tick length the function is cancelled and None is returned.
-    """
     ai_logger.info("processing tick")
 
-    # please add your code here
-    return None
+    # Get information about your ship
+    my_ship = None
+    my_ship_coordinates = None
+    for row in game_state.game_map:
+        for cell in row:
+            if cell.cell_type == "Ship":
+                my_ship = cell.data
+                my_ship_coordinates = my_ship.position  CompassDirection
+                break
+
+    if my_ship is not None:
+        # Move forward by 1 cell
+        move_command = Command(action_type=ActionType.Move, payload=MoveActionData(distance=1))
+    return move_command
