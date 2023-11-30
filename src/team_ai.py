@@ -1,8 +1,9 @@
 from __future__ import annotations
-from apiwrapper.models import Command, ActionType, MoveActionData, GameState, ClientContext, deserialize_game_state, serialize_command
+from apiwrapper.models import Command, ActionType, MoveActionData, GameState, ClientContext
 
 from logging import getLogger
 from typing import TYPE_CHECKING
+from helpers import get_config, get_coordinate_difference, _get_vector_angle_degrees, get_entity_coordinates, get_partial_turn, get_own_ship_id
 
 if TYPE_CHECKING:
     from apiwrapper.websocket_wrapper import ClientContext
@@ -37,7 +38,7 @@ def process_tick(context: ClientContext, game_state: GameState) -> Command | Non
         for cell in row:
             if cell.cell_type == "Ship":
                 my_ship = cell.data
-                my_ship_coordinates = my_ship.position  CompassDirection
+                my_ship_coordinates 
                 break
 
     if my_ship is not None:
