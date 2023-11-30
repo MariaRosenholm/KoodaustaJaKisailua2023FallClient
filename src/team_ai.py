@@ -1,5 +1,5 @@
 from __future__ import annotations
-from apiwrapper.models import Command, ActionType, MoveActionData, GameState, ClientContext
+from apiwrapper.models import Command, ActionType, MoveActionData, GameState, ClientContext,ShootActionData
 
 from logging import getLogger
 from typing import TYPE_CHECKING
@@ -32,16 +32,17 @@ def process_tick(context: ClientContext, game_state: GameState) -> Command | Non
     ai_logger.info("processing tick")
 
     # Get information about your ship
-    my_ship = None
+    my_ship = context
     my_ship_coordinates = None
     for row in game_state.game_map:
         for cell in row:
             if cell.cell_type == "Ship":
-                my_ship = cell.data
+                my_ship_coordinates = cell.data
                 my_ship_coordinates 
                 break
 
     if my_ship is not None:
         # Move forward by 1 cell
-        move_command = Command(action_type=ActionType.Move, payload=MoveActionData(distance=1))
+        move_command = Command(action=ActionType.Shoot, payload=ShootActionData(mass=1, speed=1))
+        move_command = Command(action=ActionType.Move, payload=MoveActionData(distance=1))
     return move_command
