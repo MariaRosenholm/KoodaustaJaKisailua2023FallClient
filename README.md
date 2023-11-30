@@ -1,4 +1,5 @@
 # KoodaustaJaKisailua2023FallClient
+
 Client helper/wrapper for the koodausta ja kisailua 2023 fall event.
 
 ## Setup
@@ -15,7 +16,7 @@ Depending on the tool you are using this might not open the virtual environment.
 The virtual environment is open, if the command line feed starts with `(venv)`.
 If creation doesn't open the venv, see next line.
 
-If you have already created the venv but have closed the session after the 
+If you have already created the venv but have closed the session after the
 creation of the venv or the venv has not opened, you need to open the venv with
 a command. Assuming ps terminal, this can be done with the following command:
 
@@ -31,32 +32,32 @@ multiple run configurations in PyCharm.
 
 The client has the following configuration values:
 
- - `websocket_url`: the url of the game server websocket. Already configured
-in the repository.
- - `token`: the unique token identifying your team. Already configured in the 
-repository.
- - `bot_name`: the name of this bot. Is used to differentiate different bots from
-the same team.
- - `wrapper_log_file`: the file into which the wrapper writes its logs. Can be
-null to prevent wrapper from writing logs into a file. Default 'wrapper.log'.
-Doesn't need to be identical to team AI log file.
- - `wrapper_log_stream`: the stream into which the wrapper writes its logs. Can
-be null to prevent wrapper from writing logs into a stream. Can be 'stdout',
-'stderr' or null. Default null.
- - `wrapper_log_level`: the minimum level of log entries to write from wrapper
-logging. From least critical to most critical level, the options are 'DEBUG',
-'INFO', 'WARNING', 'ERROR' and 'CRITICAL'. Default 'INFO'. If you want more
-verbose feedback about the wrapper during runtime it's recommended to set this to
-'DEBUG' and change the `wrapper_log_stream` config to 'stdout' or 'stderr'.
- - `team_ai_log_file`: the file into which the team AI writes its logs. Can be
-null to prevent team AI from writing logs into a file. Default 'wrapper.log'.
-Doesn't need to be identical to wrapper log file.
- - `team_ai_log_stream`: the stream into which the team AI writes its logs. Can
-be null to prevent team AI from writing logs into a stream. Can be 'stdout',
-'stderr' or null. Default stdout.
- - `team_ai_log_level`: the minimum level of log entries to write from wrapper
-logging. From least critical to most critical level, the options are 'DEBUG',
-'INFO', 'WARNING', 'ERROR' and 'CRITICAL'. Default 'DEBUG'.
+- `websocket_url`: the url of the game server websocket. Already configured
+  in the repository.
+- `token`: the unique token identifying your team. Already configured in the
+  repository.
+- `bot_name`: the name of this bot. Is used to differentiate different bots from
+  the same team.
+- `wrapper_log_file`: the file into which the wrapper writes its logs. Can be
+  null to prevent wrapper from writing logs into a file. Default 'wrapper.log'.
+  Doesn't need to be identical to team AI log file.
+- `wrapper_log_stream`: the stream into which the wrapper writes its logs. Can
+  be null to prevent wrapper from writing logs into a stream. Can be 'stdout',
+  'stderr' or null. Default null.
+- `wrapper_log_level`: the minimum level of log entries to write from wrapper
+  logging. From least critical to most critical level, the options are 'DEBUG',
+  'INFO', 'WARNING', 'ERROR' and 'CRITICAL'. Default 'INFO'. If you want more
+  verbose feedback about the wrapper during runtime it's recommended to set this to
+  'DEBUG' and change the `wrapper_log_stream` config to 'stdout' or 'stderr'.
+- `team_ai_log_file`: the file into which the team AI writes its logs. Can be
+  null to prevent team AI from writing logs into a file. Default 'wrapper.log'.
+  Doesn't need to be identical to wrapper log file.
+- `team_ai_log_stream`: the stream into which the team AI writes its logs. Can
+  be null to prevent team AI from writing logs into a stream. Can be 'stdout',
+  'stderr' or null. Default stdout.
+- `team_ai_log_level`: the minimum level of log entries to write from wrapper
+  logging. From least critical to most critical level, the options are 'DEBUG',
+  'INFO', 'WARNING', 'ERROR' and 'CRITICAL'. Default 'DEBUG'.
 
 ## Running
 
@@ -103,4 +104,4 @@ Model data can be found in [MODELS.md](MODELS.md)
 
 Game loop is described in [GAME_REFERENCE.md](GAME_REFERENCE.md)
 
-
+Maria testaa et git toimii!
