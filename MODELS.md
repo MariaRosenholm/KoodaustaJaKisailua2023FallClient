@@ -1,5 +1,5 @@
 # ClientContext
-
+testi
 The `ClientContext` object is available in the tick processing function as the `context`
 argument. It is reset at the start of a game and can be used to store persistent data
 between ticks. It also contains data about the game sent by the server at game start.
